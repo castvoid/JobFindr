@@ -78,5 +78,10 @@
       background-color: #F5A623;
     }
     </style>
+    <script>
+document.getElementById("searchBoxButton").onclick = function(){
+  document.location.href = 'about.html?soc=' + document.getElementById("searchBoxInput").value;
+}
+        </script>
   </body>
 </html>
