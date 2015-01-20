@@ -82,8 +82,21 @@
     }
     </style>
     <script>
+$("#searchBoxInput").bind("keypress", {}, keypressInBox);
+function keypressInBox(e) {
+    var code = (e.keyCode ? e.keyCode : e.which);
+    if (code == 13) { //Enter keycode                        
+        e.preventDefault();
+
+        search();
+    }
+};
 document.getElementById("searchBoxButton").onclick = function(){
-  document.location.href = 'about.html?soc=' + document.getElementById("searchBoxInput").value;
+  search();
+}
+
+function search(){
+  document.location.href = 'search.html?query=' + encodeURIComponent(document.getElementById("searchBoxInput").value);
 }
         </script>
   </body>

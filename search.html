@@ -23,7 +23,7 @@
     <div class="container">
 
       <h1>JobFindr</h1>
-      <h2>About the job</h2>
+      <h2>Search</h2>
 
       <section class="aboutJob">
       </section>
@@ -66,11 +66,11 @@
     return vars;
 }
 
-soc = getUrlVars()["soc"];
+soc = getUrlVars()["query"];
 
-$.getJSON( "http://api.lmiforall.org.uk/api/v1/soc/code/"+soc, function( data ) {
+$.getJSON( "http://api.lmiforall.org.uk/api/v1/soc/search?q="+soc, function( data ) {
   var items = [];
-  $.each( data, function( key, val ) {
+  $.each( data[0], function( key, val ) {
     items.push( "<li id='" + key + "'><h4>"+key+"</h4><p>" + val + "</p></li>" );
   });
  
