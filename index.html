@@ -96,7 +96,12 @@ document.getElementById("searchBoxButton").onclick = function(){
 }
 
 function search(){
-  document.location.href = 'search.html?query=' + encodeURIComponent(document.getElementById("searchBoxInput").value);
+  var searchTerm = document.getElementById("searchBoxInput").value;
+  if (searchTerm.toLowerCase() == "gleb"){
+    document.location.href = "http://gleb.rocks/"
+    return;
+  }
+  document.location.href = 'search.html?query=' + encodeURIComponent(searchTerm);
 }
         </script>
   </body>
